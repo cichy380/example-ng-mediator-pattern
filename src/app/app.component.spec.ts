@@ -1,31 +1,41 @@
+/* tslint:disable:no-unused-variable */
+
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
-  beforeEach(async(() => {
+import { NavbarComponent } from './navbar.component';
+import { SideNavComponent } from './sidenav.component';
+import { RightScreenComponent } from './rightscreen.component';
+
+describe('Testy komponentu aplikacji: AppComponent', () => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        NavbarComponent,
+        SideNavComponent,
+        RightScreenComponent
       ],
-    }).compileComponents();
-  }));
+    });
+    TestBed.compileComponents();
+  });
 
-  it('should create the app', () => {
+  it('powinien utworzyć aplikację', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
+  }));
 
-  it(`should have as title 'ng-mediator-pattern'`, () => {
+  it(`strona ma mieć tytuł 'Wybierz opcję:'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ng-mediator-pattern');
-  });
+    expect(app.title).toEqual('Wybierz opcję:');
+  }));
 
-  it('should render title in a h1 tag', () => {
+  it('tytuł ma być wyświetlony w elemencie DIV', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to ng-mediator-pattern!');
-  });
+    expect(compiled.querySelector('div.row-content-header').textContent).toContain('Wybierz opcję:');
+  }));
 });

@@ -1,16 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+// import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+// dołączamy, aby można było odszukać dany moduł
+import { NavbarComponent } from './navbar.component';
+import { SideNavComponent } from './sidenav.component';
+import { RightScreenComponent } from './rightscreen.component'
+
+// import 'bootstrap/dist/css/boostrap.min.css';
+// import '../styles/styles.scss';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    SideNavComponent,
+    RightScreenComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    // HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

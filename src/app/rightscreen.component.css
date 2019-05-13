@@ -1,0 +1,13 @@
+/* nakładka - strona 2. (tło) */
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed; /* ma pozostawać w miejscu */
+  z-index: 1; /* ma być widoczna nad innymi elementami */
+  left: 0;
+  top: 54px;
+  overflow-x: hidden; /* wyłączamy poziomy pasek przewijania */
+  transition: 0.3s;  
+  transform: translateX(100%);
+  border-left: 1px solid;
+}
