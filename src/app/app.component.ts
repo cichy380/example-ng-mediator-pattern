@@ -3,7 +3,6 @@ import { SideNavComponent } from './sidenav.component';
 import { RightScreenComponent } from './rightscreen.component';
 import { Mediator, IMediatorImpl, StateType } from './state.mediator';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -39,17 +38,14 @@ export class AppComponent implements IMediatorImpl, AfterViewInit {
   }
   changeShowHideSideButton(fromClass: string, toClass: string) {
     if (fromClass.length > 0 && toClass.length > 0) {
-      document.getElementById('show-hide-side-button')
-        .classList.remove(fromClass);
-      document.getElementById('show-hide-side-button')
-        .classList.add(toClass);
+      document.getElementById('show-hide-side-button').classList.remove(fromClass);
+      document.getElementById('show-hide-side-button').classList.add(toClass);
     }
   }
 
   // events
-  onNotifyRightWindow(message:string):void {
-    this.mediator.moveToState(
-      this.mediator.getCurrentMainPanelState());
+  onNotifyRightWindow() {
+    this.mediator.moveToState(this.mediator.getCurrentMainPanelState());
   }
 
   buttonClickedDetail() {
@@ -59,6 +55,4 @@ export class AppComponent implements IMediatorImpl, AfterViewInit {
   showHideSideClicked() {
     this.mediator.showHideSideNavClicked();
   }
-
-
 }

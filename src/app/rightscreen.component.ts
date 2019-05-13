@@ -6,13 +6,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./rightscreen.component.css']
 })
 
-export class RightScreenComponent 
+export class RightScreenComponent
 {
-  @Output() notify: EventEmitter<string> 
+  @Output() notify: EventEmitter<string>
     = new EventEmitter<string>();
 
   closeClicked() {
-    this.notify.emit('Kliknięto w komponencie zagnieżdżonym.');
+    this.notify.emit('Clicked inside rightscreen component.');
   }
 
   closeRightWindow() {
